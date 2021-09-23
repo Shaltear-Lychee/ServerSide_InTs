@@ -9,11 +9,16 @@
 <body>
   <h1>Insert</h1>
   <div>
+    <ul>
+      <% for(let i in errs_arr) { %>
+        <li><%= errs_arr[i].msg %> </li>
+      <% } %>  
+    </ul>  
     <form action="/insert" method="post">
       <ul>
-        <li><input type="text" name="article_title"></li>
-        <li><textarea name="article_content" cols="60" rows="5"></textarea></li>
-        <li><input type="text" name="article_author"></li>
+        <li><input type="text" name="article_title" value=<%= form.article_title %>></li>
+        <li><textarea name="article_content" cols="60" rows="5" ><%= form.article_content %></textarea></li>
+        <li><input type="text" name="article_author" value=<%= form.article_author %>></li>
         <li><input type="submit" value="Insert"></li>
       </ul>
     </form>
